@@ -1,0 +1,22 @@
+$main: #232f3e;
+$yellow: #ffc107;
+
+
+.bg-main {
+    background-color: $main;
+}
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: $yellow;
+}
+
+button {
+    cursor: pointer;
+}
+
+section {
+    min-height: 630px;
+}
