@@ -9,6 +9,7 @@ import { AppComponent }     from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import { RestApiService } from './rest-api.service';
+import { DataService }  from './data.service';
 import { MessageComponent } from './message/message.component';
 
 @NgModule({
@@ -24,7 +25,7 @@ import { MessageComponent } from './message/message.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [RestApiService],
+  providers: [RestApiService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
