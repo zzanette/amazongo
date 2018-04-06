@@ -7,6 +7,27 @@ export class DataService {
   messageType = 'danger';
 
 
-  constructor() { }
+  constructor(private router: Router) { 
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.message = '';
+      }
+    });
+  }
+
+  error(message) {
+    this.messageType = 'danger';
+    this.message = message;
+  }
+
+  succcess(message) {
+    this.messageType = 'success';
+    this.message = message;
+  }
+
+  warning(message) {
+    this.messageType = 'warning';
+    this.message = message;
+  }
 
 }
