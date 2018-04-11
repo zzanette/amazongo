@@ -8,9 +8,12 @@ const config = require('./config');
 
 const app = express();
 
+
+
 mongoose.connect(config.database, (err) => {
     if (err) {
-        console.log(err);
+        console.log(config.database);
+        console.log('Error:' + err);
     } else {
         console.log("Connected!!!!");
     }
@@ -19,15 +22,12 @@ mongoose.connect(config.database, (err) => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(monrgan('dev'));
-app.use(cors)
+//app.use(cors);
 
-app.get('/', (req, res, next) => {
-    res.json({
-        test: 'hello'
-    });
-});
+const routerAccount = require('./routes/account');
+app.use('/api/accounts', routerAccount);
 
 app.listen(config.port, err => {
-    console.log('magic: ' + config);
+    console.log('magic happens: ' + config.port);
 })
 

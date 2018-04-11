@@ -1,6 +1,6 @@
-const db = 'ADD YOUR URL HERE!!';
+const db = 'mongodb://usermongo:usermongo@ds231749.mlab.com:31749/amazongodb';
 const port = 3030;
-const secret_key = 'ADD YOUR SECRET KEY HERE!!';
+const secret_key = 'amazongouser';
 
 module.exports = {
     database: db,
