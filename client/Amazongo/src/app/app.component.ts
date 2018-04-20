@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from './data.service';
-import { Route } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent {
   searchTerm = '';
   isCollpased = true;
 
-  constructor(private router: Route, private dataService: DataService) {
+  constructor(private router: Router, private dataService: DataService) {
     
   }
 
@@ -29,9 +29,9 @@ export class AppComponent {
   }
 
   logout() {
-  //  this.dataService.user = {};
+    this.dataService.user = {};
     localStorage.clear();
-    //this.router.redirectTo('Home');
+    this.router.navigate(['']);
   
   }
 

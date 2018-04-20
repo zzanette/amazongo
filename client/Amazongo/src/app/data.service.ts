@@ -3,6 +3,7 @@ import { NavigationStart, Router } from '@angular/router';
 
 @Injectable()
 export class DataService {
+  user = {};
   message = '';
   messageType = 'danger';
 
